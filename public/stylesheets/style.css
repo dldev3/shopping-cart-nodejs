@@ -20,3 +20,11 @@
 .navbar {
     padding-bottom: 0 !important;
 }
+
+.my-container {
+    padding: 2rem;
+}
+
+.card-bottom{
+    margin-bottom: 2rem;
+}

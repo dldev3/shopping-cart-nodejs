@@ -1,0 +1,22 @@
+.cart-nav {
+    cursor: pointer !important;
+}
+.cart-drop {
+    cursor: pointer !important;
+}
+.nav-inline {
+    display: inline-block;
+    /* padding-top: .3125rem; */
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+.navbar-brand{
+    margin-bottom: 1rem !important;
+}
+
+.navbar {
+    padding-bottom: 0 !important;
+}

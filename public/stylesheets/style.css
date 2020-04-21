@@ -23,6 +23,8 @@
 
 .my-container {
     padding: 2rem;
+    position: relative;
+    min-height: 100vh;
     /*background-color: darkgray;*/
 }
 

@@ -1,10 +1,3 @@
- {{!-- {{# each productChunks}}
-    {{# each this}}
-    <li>{{this._id}},{{this.imagePath}},{{this.title}},{{this.description}},{{this.price}},{{this.__v}}</li>
-{{/each}} 
-{{/each}} --}}
- 
- 
 <div class="row">
     <div class="card-deck">
          {{# each productChunks }}
@@ -15,8 +8,7 @@
             <div class="card-body">
                 <h5 class="card-title"><span>{{ this.title }}<br> <b>{{ this.price }}$</b> </span></h5>
             <p class="card-text">{{ this.description }}</p>
-            <button class="btn btn-primary">BUY</button>
-            <button class="btn btn-success">Wishlist</button>
+            <button class="btn btn-success">Add to Shopping Cart</button>
             </div>
         </div>
         </div>
@@ -25,71 +17,3 @@
     {{/each }}
 </div>
 </div>
-
-
-
-{{!-- <div class="row">
-    <div class="card-deck">
-  
-        <div class="col-4 card-bottom">
-        <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <button class="btn btn-primary">BUY</button>
-            <button class="btn btn-success">Wishlist</button>
-            </div>
-            <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-4 card-bottom">
-        <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-truncate">This card has supporting text below as a natural lead-in to additional content.</p>
-            <button class="btn btn-primary">BUY</button>
-            <button class="btn btn-success">Wishlist</button>
-            </div>
-            <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-4 card-bottom">
-        <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <button class="btn btn-primary">BUY</button>
-            <button class="btn btn-success">Wishlist</button>
-            </div>
-            <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-4 card-bottom">
-        <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <button class="btn btn-primary">BUY</button>
-            <button class="btn btn-success">Wishlist</button>
-            </div>
-            <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        </div>
-
-</div>
-</div> --}}

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
@@ -15,6 +15,8 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "mongoose": "^5.9.10",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.3"
+
   }
 }

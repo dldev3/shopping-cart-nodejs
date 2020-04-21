@@ -4,12 +4,14 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let expressHbs = require('express-handlebars');
+let mongoose = require('mongoose');
 
 
 
+const uri = "mongodb+srv://admin:admin123@cluster0-l7vnq.mongodb.net/shopping-cart-node?retryWrites=true&w=majority";
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 let indexRouter = require('./routes/index');
-
 
 let app = express();
 

@@ -6,12 +6,18 @@ let logger = require('morgan');
 let expressHbs = require('express-handlebars');
 let mongoose = require('mongoose');
 let session = require('express-session');
+let passport = require('passport');
+let flash =  require('connect-flash');
+
+
 
 let Handlebars = require('handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 const uri = "mongodb+srv://admin:admin123@cluster0-l7vnq.mongodb.net/shopping-cart-node?retryWrites=true&w=majority";
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
+
+require('./config/passport');
 
 let indexRouter = require('./routes/index');
 
@@ -31,6 +37,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({secret: 'mysupersecret', resave: false, saveUninitialized: false}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

@@ -8,7 +8,8 @@ let mongoose = require('mongoose');
 let session = require('express-session');
 let passport = require('passport');
 let flash =  require('connect-flash');
-
+let bodyParser = require('body-parser');
+let validator = require('express-validator');
 
 
 let Handlebars = require('handlebars');
@@ -35,6 +36,9 @@ app.set('view engine', '.hbs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}))
+app.use(validator());
 app.use(cookieParser());
 app.use(session({secret: 'mysupersecret', resave: false, saveUninitialized: false}));
 app.use(flash());

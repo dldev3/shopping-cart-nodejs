@@ -6,7 +6,8 @@ let logger = require('morgan');
 let expressHbs = require('express-handlebars');
 let mongoose = require('mongoose');
 
-
+let Handlebars = require('handlebars');
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 const uri = "mongodb+srv://admin:admin123@cluster0-l7vnq.mongodb.net/shopping-cart-node?retryWrites=true&w=majority";
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -18,7 +19,8 @@ let app = express();
 // view engine setup
 app.engine('.hbs', expressHbs({ 
   defaultLayout: 'layout',
-  extname: '.hbs'
+  extname: '.hbs',
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
 }));
 
 app.set('view engine', '.hbs');

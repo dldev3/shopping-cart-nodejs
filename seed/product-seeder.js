@@ -26,6 +26,13 @@ let products = [
         description:"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little " +
             "bit longer.This is a wider card with supporting text below as a natural lead-in to additional content",
         price: 999,
+    }),
+    new Product({
+        imagePath: "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        title:"Apple Iphone X",
+        description:"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little " +
+            "bit longer.This is a wider card with supporting text below as a natural lead-in to additional content",
+        price: 999,
     })
 ];
 

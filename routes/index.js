@@ -1,17 +1,19 @@
-let express = require('express');
-let router = express.Router();
-let Product = require('../models/product');
+var express = require('express');
+var router = express.Router();
+var Product = require('../models/product');
 
-/* GET home page. */
-router.get('/', (req, res, next) => {
-  Product.find((err,docs)=>{
-    let productChunks = [];
-    let chunkSize = 3;
-    for (let i = 0; docs.length; i += chunkSize){
-      productChunks.push(docs.slice(i, i + chunkSize))
+router.get('/', function(req,res,next){
+  Product.find(function(err,docs){
+    var productChunks = [];
+    var chunkSize = 3;
+    for(var i = 0; i< docs.length; i += chunkSize){
+      productChunks.push(docs.slice(i, i + chunkSize));
     }
+
+    //console.log(productChunks);
+    
     res.render('shop/index', {
-      products: productChunks
+     productChunks
     });
   });
 });

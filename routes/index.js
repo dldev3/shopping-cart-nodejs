@@ -24,8 +24,11 @@ router.get('/', function(req,res,next){
 
 
 router.get('/user/signup', (req,res,next) => {
+  let messages = req.flash('error');
   res.render('user/signup', {
-    csrfToken: req.csrfToken()
+    csrfToken: req.csrfToken(),
+    messages: messages,
+    hasErrors: messages.length > 0
   });
 });
 

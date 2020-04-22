@@ -21,6 +21,7 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 require('./config/passport');
 
 let indexRouter = require('./routes/index');
+let userRouter = require('./routes/user');
 
 let app = express();
 
@@ -47,6 +48,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

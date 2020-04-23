@@ -10,7 +10,7 @@ let passport = require('passport');
 let flash =  require('connect-flash');
 let bodyParser = require('body-parser');
 let validator = require('express-validator');
-
+let MongoStore = require('connect-mongo')(session);
 
 let Handlebars = require('handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
@@ -41,7 +41,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}))
 app.use(validator());
 app.use(cookieParser());
-app.use(session({secret: 'mysupersecret', resave: false, saveUninitialized: false}));
+app.use(session({
+  secret: 'mysupersecret',
+  resave: false,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection
+  }),
+  cookie: { maxAge: 180 * 60 * 1000}
+}));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,6 +57,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req,res,next){
   res.locals.login = req.isAuthenticated();
+  res.locals.session = req.session;
   next();
 });
 

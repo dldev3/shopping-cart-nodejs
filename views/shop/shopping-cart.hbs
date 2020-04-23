@@ -1,0 +1,149 @@
+<!--
+{{# if products}}
+    <div class="row">
+        <div class="col-ms-6 col-md-4 col-md-offset-3 col-sm-offset-3">
+            <ul class="list-group">
+    {{# each products }}
+                <li class="list-group-item">
+                    <span class="badge badge-secondary">{{ this.qty}}</span>
+                    <strong>{{ this.item.title}}</strong>
+                    <span class="badge badge-pill badge-success">${{ this.price }}</span>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Action
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Reduce by 1</a>
+                            <a class="dropdown-item" href="#">Remove All</a>
+                        </div>
+                    </div>
+                </li>
+        {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-ms-6 col-md-4 col-md-offset-3 col-sm-offset-3">
+            <strong>Total: {{ totalPrice}}</strong>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-ms-6 col-md-4 col-md-offset-3 col-sm-offset-3">
+            <button type="button" class="btn btn-success">Checkout</button>
+        </div>
+    </div>
+{{else}}
+    <div class="row">
+        <div class="col-ms-6 col-md-4 col-md-offset-3 col-sm-offset-3">
+            <h2>No Items in Cart</h2>
+        </div>
+    </div>
+{{/if}}
+
+-->
+<div class="container">
+    <h1><b>Shopping Cart</b></h1>
+    <br>
+{{# if products}}
+    <div class="card">
+        <table class="table table-hover shopping-cart-wrap">
+            <thead class="text-muted">
+            <tr>
+                <th scope="col">Product</th>
+                <th scope="col" width="120">Quantity</th>
+                <th scope="col" width="120">Unit Price</th>
+                <th scope="col" width="120">Price</th>
+                <th scope="col" width="180" class="text-left">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {{# each products}}
+
+            <tr>
+                <!--                Item Details-->
+                <td>
+                    <figure class="media">
+                        <div class="img-wrap"><img src="{{ this.item.imagePath }}" class="img-thumbnail img-sm"></div>
+                        <figcaption class="media-body">
+                            <h6 class="title text-truncate">{{ this.item.title }}</h6>
+                            <dl class="param param-inline small">
+                                <dt>Description: </dt>
+                                <dd class="justify-content">{{ this.item.description }}</dd>
+                            </dl>
+                        </figcaption>
+                    </figure>
+                </td>
+                <!--                Item Details END-->
+
+                <!--Quantity-->
+                <td>
+                    <p class="text-center text-secondary"><b>{{this.qty}}</b></p>
+
+                </td>
+                <!--                Quantity END-->
+
+                <!--            Unit Price-->
+                <td>
+                    <div class="price-wrap">
+                        <var class="price text-secondary">${{ this.item.price }}</var>
+                    </div>
+                </td>
+                <!--                Unit Price END-->
+
+                <!--                Net Price-->
+                <td>
+                    <div class="price-wrap">
+                        <var class="price text-secondary">{{this.price}}</var>
+                    </div> <!-- price-wrap .// -->
+                </td>
+                <!--                Unit Price END-->
+
+
+                <!--                Action-->
+                <td class="text-left">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Action
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Reduce by 1</a>
+                            <a class="dropdown-item" href="#">Remove All</a>
+                        </div>
+                    </div>
+                </td>
+                <!--                Action END-->
+
+            </tr>
+
+            {{/each}}
+
+            </tbody>
+        </table>
+    </div> <!-- card.// -->
+
+    <br>
+        <div>
+            <h2>Total: {{ totalPrice}}</h2>
+        </div>
+    <hr>
+        <div>
+            <button type="button" class="btn btn-success">Checkout</button>
+        </div>
+
+
+
+    {{else}}
+
+    <div class="row">
+        <div class="col-ms-6 col-md-4 col-md-offset-3 col-sm-offset-3">
+            <h2>No Items in Cart</h2>
+        </div>
+    </div>
+
+{{/if}}
+</div>
+<!--container end.//-->
+
+

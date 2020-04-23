@@ -10,7 +10,9 @@
     </ul>
     <div class=" form-inline nav-inline my-2 my-lg-0">
       <ul class="nav-item active">
-        <div class="nav-link cart-nav" href="#"><i class="fas fa-shopping-cart"></i> <span> </span>Shopping Cart</div>
+        <div class="nav-link cart-nav" onclick="location.href='/shopping-cart'"><i class="fas fa-shopping-cart"></i> <span> </span>Shopping Cart
+            <span class="badge badge-secondary">{{ session.cart.totalQty }}</span>
+        </div>
       </ul>
       <ul class="nav-item dropdown">
         <div class="nav-link dropdown-toggle cart-drop" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

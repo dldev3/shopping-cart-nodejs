@@ -17,7 +17,7 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 
 const uri = "mongodb+srv://admin:admin123@cluster0-l7vnq.mongodb.net/shopping-cart-node?retryWrites=true&w=majority";
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
-
+  
 require('./config/passport');
 
 let indexRouter = require('./routes/index');

@@ -1,0 +1,38 @@
+ <div class="form-div" style="margin-left: 30%; margin-right: 30%;">
+    <h1>Checkout</h1>
+    <h2>Your Total: {{ total }}$</h2>
+    <br>
+<form action="/" method="POST">
+  <div class="form-group">
+    <label for="name"><b>Name</b></label>
+    <input type="text" class="form-control" id="Name"  required >
+  </div>
+  <div class="form-group">
+    <label for="address"><b>Address</b></label>
+    <input type="text" class="form-control" id="address" required>
+  </div>
+  <div class="form-group">
+    <label for="card-name"><b>Card Holder Name</b></label>
+    <input type="text" class="form-control" id="card-name"  required>
+  </div>
+  <div class="form-group">
+    <label for="card-number"><b>Credit Card Number</b></label>
+    <input type="text" class="form-control" id="card-number" required>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="card-expiry-month"><b>Expiration Month</b></label>
+      <input type="text" class="form-control" id="card-expiry-month" required>
+    </div>
+     <div class="form-group col-md-6">
+      <label for="card-expiry-year"><b>Expiration Year</b></label>
+      <input type="text" class="form-control" id="card-expiry-year" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="card-number"><b>CVC</b></label>
+    <input type="text" class="form-control" id="cvc" required>
+  </div>
+  <button type="submit" class="btn btn-success">Buy Now</button>
+</form>
+</div>
